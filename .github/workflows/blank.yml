@@ -72,6 +72,7 @@ jobs:
       - name: Deploy Helm Chart
         run: |
            helm repo add harbor https://helm.goharbor.io
+           helm uninstall my-harbor
            helm upgrade my-harbor harbor/harbor -f ./default-values.yaml -f ./values.yaml -n grafana
            
       # - name: Deploy harbor
